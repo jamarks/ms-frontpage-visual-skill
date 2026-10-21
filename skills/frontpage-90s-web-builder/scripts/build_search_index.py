@@ -87,7 +87,9 @@ def main():
     site = os.path.abspath(args[0])
     out = os.path.join(site, 'theme', 'search-index.js')
     if '--out' in sys.argv:
-        out = os.path.join(site, sys.argv[sys.argv.index('--out') + 1])
+        out = os.path.realpath(os.path.join(site, sys.argv[sys.argv.index('--out') + 1]))
+        if os.path.commonpath([os.path.realpath(site), out]) != os.path.realpath(site):
+            sys.exit('--out must be a path inside the site folder')
     entries = []
     for root, _, names in os.walk(site):
         for n in sorted(names):

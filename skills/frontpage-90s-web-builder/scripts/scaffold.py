@@ -175,7 +175,15 @@ def build_frameset(a, s, items, css_block, js_block):
            first=esc(items[0][0]), main=esc(s['main']), js=js_block)
 
 
+SAFE_PAGE = re.compile(r'^[A-Za-z0-9][A-Za-z0-9_-]*\.html?$')
+SAFE_ID = re.compile(r'^[A-Za-z][A-Za-z0-9_-]*$')
+OUT_ROOT = None  # set in main(); every write must stay inside it
+
+
 def write(path, text, force):
+    real = os.path.realpath(path)
+    if OUT_ROOT is None or os.path.commonpath([OUT_ROOT, real]) != OUT_ROOT:
+        sys.exit('refusing to write outside the output directory: %s' % path)
     if os.path.exists(path) and not force:
         sys.exit('refusing to overwrite %s (use --force)' % path)
     os.makedirs(os.path.dirname(path) or '.', exist_ok=True)
@@ -219,7 +227,15 @@ def main():
         p.error('unknown theme %r; choose from: %s' % (a.theme, ', '.join(themes())))
     s = STRINGS.get(a.lang.split('-')[0], STRINGS['en'])
     a.year = a.year or ERAS[a.era][1]
+    global OUT_ROOT
+    OUT_ROOT = os.path.realpath(a.out)
     pages = parse_pairs(a.pages) or [('index.html', a.title)]
+    for fname, _ in pages:  # plain file names only: no folders, no "..", no absolute paths
+        if not SAFE_PAGE.match(fname):
+            p.error('invalid page file name %r: use names like "about.html" (letters, digits, - and _)' % fname)
+    for sid, _ in parse_pairs(a.sections):
+        if not SAFE_ID.match(sid):
+            p.error('invalid section id %r: start with a letter; letters, digits, - and _ only' % sid)
     mode = a.mode or ('inline' if len(pages) == 1 and a.layout != 'frames' else 'shared')
     kit_css, theme_css, kit_js = read(os.path.join(ASSETS, 'fp-kit.css')), read(os.path.join(THEMES, a.theme + '.css')), read(os.path.join(ASSETS, 'fp-kit.js'))
 
