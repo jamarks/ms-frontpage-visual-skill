@@ -1,0 +1,20 @@
+/* Theme: expedition — homage to FrontPage's "Expedition": khaki parchment, field-notebook browns,
+   serif type, compass bullets. Good for travel, outdoors, history, workshops, family businesses. */
+:root{
+  --fp-bg:#e8dbb4;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><rect width='60' height='60' fill='%23e8dbb4'/><g fill='%23d4c391'><circle cx='7' cy='9' r='1'/><circle cx='41' cy='5' r='.8'/><circle cx='23' cy='31' r='1.2'/><circle cx='52' cy='44' r='1'/><circle cx='12' cy='50' r='.7'/><circle cx='35' cy='55' r='.9'/></g><g fill='%23f2e8c9'><circle cx='30' cy='14' r='1'/><circle cx='5' cy='33' r='.8'/><circle cx='48' cy='25' r='1.1'/></g></svg>");
+  --fp-text:#3a2a12; --fp-link:#8b2c0a; --fp-vlink:#5e4a2a; --fp-alink:#c04000;
+  --fp-body-font:"Book Antiqua",Palatino,"Palatino Linotype",Georgia,serif; --fp-h-font:"Book Antiqua",Palatino,Georgia,serif; --fp-h:#6b3d10;
+  --fp-panel:transparent; --fp-side:rgba(201,178,122,.35); --fp-panel-border:#8a6d3b;
+  --fp-banner-bg:#5a4220; --fp-banner-text:#f3e6c0; --fp-banner-shadow:#2a1d08;
+  --fp-banner-font:bold italic 30px/1.1 "Book Antiqua",Palatino,Georgia,serif;
+  --fp-btn-bg:#c9b07a; --fp-btn-text:#3a2a12; --fp-btn-light:#f1e3bb; --fp-btn-dark:#6b5530;
+  --fp-btn-hover-bg:#d8c18b; --fp-btn-current-bg:#6b3d10; --fp-btn-current-text:#f3e6c0;
+  --fp-hover-bg:#6b3d10; --fp-hover-text:#f3e6c0; --fp-hover-glow:#b07a3a;
+  --fp-rule-h:4px; --fp-rule-bg:repeating-linear-gradient(90deg,#6b5530 0 10px,transparent 10px 14px);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='11'><path d='M5.5 0L7 4 11 5.5 7 7 5.5 11 4 7 0 5.5 4 4Z' fill='%236b3d10'/></svg>");
+  --fp-table-head:#6b5530; --fp-table-head-text:#f3e6c0; --fp-table-border:#8a6d3b; --fp-table-alt:rgba(241,227,187,.6);
+  --fp-form-bg:#efe3c2; --fp-note:#5e4a2a;
+}
+.fp-banner{border:3px double #f3e6c0;outline:2px solid #5a4220}
+.fp-btn{font-family:Georgia,serif}

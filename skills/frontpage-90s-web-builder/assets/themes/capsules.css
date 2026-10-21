@@ -1,0 +1,24 @@
+/* Theme: capsules — homage to FrontPage's "Capsules": glossy blue pill buttons on pale steel blue.
+   The one classic theme with rounded buttons. Good for clinics, software, services, newsletters. */
+:root{
+  --fp-bg:#e9f0fa;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect width='16' height='16' fill='%23e9f0fa'/><path d='M0 16L16 0' stroke='%23dde7f5'/></svg>");
+  --fp-text:#1b2540; --fp-link:#0645ad; --fp-vlink:#5b2d8e;
+  --fp-body-font:Verdana,Geneva,Arial,sans-serif; --fp-h-font:Verdana,Geneva,Arial,sans-serif; --fp-h:#1d3f8a;
+  --fp-panel:#fff; --fp-side:#dbe6f6; --fp-panel-border:#7d9bd1;
+  --fp-banner-bg:#2f5fc4; --fp-banner-image:linear-gradient(#6f9ae8 0,#2f5fc4 50%,#22489b 51%,#2f5fc4);
+  --fp-banner-text:#fff; --fp-banner-shadow:#173068;
+  --fp-banner-font:bold 26px/1.1 Verdana,Geneva,sans-serif;
+  --fp-btn-bg:#2f5fc4; --fp-btn-image:linear-gradient(#8fb2f0 0,#3d6fd6 48%,#2a56b5 52%,#3a6ad0); --fp-btn-text:#fff;
+  --fp-btn-light:#1f3f86; --fp-btn-dark:#1f3f86; --fp-btn-radius:13px;
+  --fp-btn-hover-bg:#3d6fd6; --fp-btn-hover-image:linear-gradient(#a9c4f5 0,#4a7be0 48%,#3260c4 52%,#4677dc); --fp-btn-hover-text:#ffff99; --fp-btn-current-bg:#f2a516; --fp-btn-current-image:linear-gradient(#ffe08a,#f2a516 50%,#d98c00 52%,#f2a516); --fp-btn-current-text:#1b2540;
+  --fp-hover-bg:#2f5fc4; --fp-hover-text:#fff; --fp-hover-glow:#8fb2f0;
+  --fp-rule-h:3px; --fp-rule-bg:linear-gradient(90deg,transparent,#2f5fc4 15%,#2f5fc4 85%,transparent);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><rect x='.5' y='.5' width='11' height='7' rx='3.5' fill='%233d6fd6' stroke='%231f3f86'/><rect x='2' y='1.5' width='8' height='2' rx='1' fill='%23bcd2f7'/></svg>");
+  --fp-table-head:#2f5fc4; --fp-table-head-text:#fff; --fp-table-border:#7d9bd1; --fp-table-alt:#eef3fb;
+  --fp-small-font:11px/1.35 Verdana,Arial,sans-serif;
+}
+body{font-size:13px}
+.fp-btn{border-width:1px;text-shadow:0 -1px 0 #1f3f86}
+.fp-btn[aria-current="page"]{text-shadow:none}
+.fp-banner{border-radius:14px;margin:4px 6px 8px}

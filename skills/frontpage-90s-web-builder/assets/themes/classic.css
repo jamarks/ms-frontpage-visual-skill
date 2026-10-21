@@ -1,0 +1,13 @@
+/* Theme: classic — FrontPage 97/98 with "no theme": gray desktop, white panel, navy masthead,
+   gray beveled buttons. The look of countless small-business and school sites. */
+:root{
+  --fp-bg:#c0c0c0; --fp-text:#000; --fp-link:#0000ee; --fp-vlink:#551a8b;
+  --fp-body-font:"Times New Roman",Times,serif; --fp-h-font:Arial,Helvetica,sans-serif; --fp-h:#000080;
+  --fp-panel:#fff; --fp-side:#e4e4e4; --fp-panel-border:#808080;
+  --fp-banner-bg:#000080; --fp-banner-text:#fff; --fp-banner-shadow:#000040;
+  --fp-banner-font:bold 28px/1.1 Arial,Helvetica,sans-serif;
+  --fp-btn-bg:#c0c0c0; --fp-btn-text:#000; --fp-btn-light:#fff; --fp-btn-dark:#404040;
+  --fp-btn-hover-bg:#d8d8d8; --fp-btn-current-bg:#000080; --fp-btn-current-text:#fff;
+  --fp-table-head:#000080; --fp-table-head-text:#fff;
+}
+table.fp-layout{border:2px outset #e0e0e0}

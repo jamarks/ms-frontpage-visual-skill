@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="network-blitz">
+<title>LAN Party HQ</title>
+<style>
+/* =====================================================================
+   FrontPage 90s kit — base styles (theme-neutral)
+   Pair with ONE file from assets/themes/*.css, which sets the --fp-* vars.
+   Classes are prefixed fp- so they never collide with the page's own CSS.
+   ===================================================================== */
+:root{
+  --fp-bg:#fff; --fp-bg-image:none; --fp-text:#000;
+  --fp-link:#0000ee; --fp-vlink:#551a8b; --fp-alink:#ff0000;
+  --fp-body-font:"Times New Roman",Times,serif;
+  --fp-h-font:Arial,Helvetica,sans-serif; --fp-h:#000080;
+  --fp-nav-font:Arial,Helvetica,sans-serif;
+  --fp-panel:#fff; --fp-panel-image:none; --fp-panel-border:#808080;
+  --fp-side:#dcdcdc; --fp-side-image:none;
+  --fp-banner-bg:#000080; --fp-banner-image:none; --fp-banner-text:#fff;
+  --fp-banner-font:bold 28px/1.1 Arial,Helvetica,sans-serif; --fp-banner-shadow:#000;
+  --fp-btn-bg:#c0c0c0; --fp-btn-image:none; --fp-btn-text:#000;
+  --fp-btn-light:#fff; --fp-btn-dark:#404040; --fp-btn-radius:0;
+  --fp-btn-hover-bg:#d4d4d4; --fp-btn-hover-text:#000;
+  --fp-btn-current-bg:#808080; --fp-btn-current-text:#fff;
+  --fp-hover-bg:#000080; --fp-hover-text:#ffff00; --fp-hover-glow:#6a6aff;
+  --fp-rule-h:2px; --fp-rule-bg:linear-gradient(#808080 50%,#fff 50%);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9'><rect width='9' height='9' fill='%23000080'/><rect x='2' y='2' width='5' height='5' fill='%236a6aff'/></svg>");
+  --fp-table-head:#000080; --fp-table-head-text:#fff; --fp-table-border:#808080; --fp-table-alt:#f0f0f0;
+  --fp-accent:#ff0000; --fp-small-font:11px/1.35 Verdana,Arial,sans-serif;
+  --fp-focus:#ff0000;
+}
+
+/* ---------- Page ---------- */
+html{background:var(--fp-bg) var(--fp-bg-image)}
+body{margin:8px;background:var(--fp-bg) var(--fp-bg-image);color:var(--fp-text);
+  font:16px/1.3 var(--fp-body-font);-webkit-text-size-adjust:100%}
+a:link{color:var(--fp-link)} a:visited{color:var(--fp-vlink)} a:active{color:var(--fp-alink)}
+a{text-decoration:underline}
+/* IE-style dotted focus rectangle: period-correct AND accessible */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2px dotted var(--fp-focus);outline-offset:2px}
+h1,h2,h3,h4{font-family:var(--fp-h-font);color:var(--fp-h);margin:.6em 0 .35em;line-height:1.15}
+h1{font-size:26px} h2{font-size:20px} h3{font-size:16px} h4{font-size:14px}
+p{margin:0 0 .8em}
+img{border:0;max-width:100%;height:auto}
+hr{border:0;height:var(--fp-rule-h);background:var(--fp-rule-bg);margin:12px 0}
+small,.fp-small{font:var(--fp-small-font)}
+.fp-center{text-align:center}
+.fp-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Layout: the centered 760px table ---------- */
+.fp-page{max-width:780px;margin:0 auto}
+.fp-page--wide{max-width:960px}
+table.fp-layout{width:100%;border-collapse:separate;background:var(--fp-panel) var(--fp-panel-image)}
+table.fp-layout>tbody>tr>td{vertical-align:top}
+td.fp-side{width:150px;background:var(--fp-side) var(--fp-side-image)}
+td.fp-main{background:var(--fp-panel) var(--fp-panel-image)}
+.fp-border-top{padding-bottom:4px}
+.fp-border-bottom{text-align:center;font:var(--fp-small-font)}
+.fp-box{border:2px groove var(--fp-panel-border);padding:6px 8px;margin:10px 0}
+.fp-box>.fp-box-title{display:block;margin:-6px -8px 6px;padding:2px 8px;background:var(--fp-table-head);
+  color:var(--fp-table-head-text);font:bold 12px var(--fp-nav-font);text-transform:uppercase;letter-spacing:.5px}
+.fp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* nested multi-column content table (2-3 columns side by side); stacks on phones like .fp-layout */
+table.fp-cols{width:100%;border-collapse:separate}
+table.fp-cols>tbody>tr>td{vertical-align:top}
+
+/* ---------- Page Banner component ---------- */
+.fp-banner{background:var(--fp-banner-bg) var(--fp-banner-image);background-size:auto 100%;
+  color:var(--fp-banner-text);font:var(--fp-banner-font);text-align:center;padding:12px 10px;
+  text-shadow:2px 2px 0 var(--fp-banner-shadow);margin:0 0 6px;letter-spacing:.5px}
+.fp-banner h1,.fp-banner .fp-banner-title{font:inherit;color:inherit;margin:0;letter-spacing:inherit;text-transform:inherit;font-variant:inherit}
+.fp-banner small{display:block;font:italic 13px var(--fp-body-font);text-shadow:none;margin-top:4px;letter-spacing:0}
+
+/* ---------- Navigation bars (theme buttons / text links) ---------- */
+.fp-navbar{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;margin:4px 0}
+.fp-navbar-v{display:flex;flex-direction:column;gap:4px;margin:4px 0}
+.fp-btn{display:inline-block;box-sizing:border-box;min-width:100px;padding:4px 8px;background:var(--fp-btn-bg) var(--fp-btn-image);
+  color:var(--fp-btn-text)!important;font:bold 12px/1.2 var(--fp-nav-font);text-align:center;text-decoration:none!important;
+  border:2px solid;border-color:var(--fp-btn-light) var(--fp-btn-dark) var(--fp-btn-dark) var(--fp-btn-light);
+  border-radius:var(--fp-btn-radius);cursor:pointer}
+.fp-btn:hover{background-color:var(--fp-btn-hover-bg);background-image:var(--fp-btn-hover-image,none);color:var(--fp-btn-hover-text)!important}
+.fp-btn:active{border-color:var(--fp-btn-dark) var(--fp-btn-light) var(--fp-btn-light) var(--fp-btn-dark)}
+.fp-btn[aria-current="page"]{background-color:var(--fp-btn-current-bg);background-image:var(--fp-btn-current-image,none);color:var(--fp-btn-current-text)!important;
+  border-color:var(--fp-btn-dark) var(--fp-btn-light) var(--fp-btn-light) var(--fp-btn-dark)}
+button.fp-btn,input.fp-btn{font:bold 12px/1.2 var(--fp-nav-font)}
+.fp-textnav{text-align:center;font:var(--fp-small-font);margin:6px 0}
+.fp-textnav a[aria-current="page"]{font-weight:bold;text-decoration:none;color:var(--fp-text)}
+
+/* Hover Button (emulates FrontPage's Java applet: glow / fill / bevel effects) */
+.fp-hoverbtn{display:inline-block;box-sizing:border-box;min-width:130px;max-width:100%;min-height:26px;padding:5px 10px;line-height:1.3;background:var(--fp-hover-bg);
+  color:var(--fp-hover-text)!important;font:bold 12px Arial,sans-serif;text-align:center;text-decoration:none!important;
+  vertical-align:middle;margin:2px}
+.fp-hoverbtn:hover,.fp-hoverbtn:focus-visible{background:radial-gradient(ellipse at center,var(--fp-hover-glow) 0,var(--fp-hover-bg) 75%)}
+.fp-hoverbtn--fill:hover,.fp-hoverbtn--fill:focus-visible{background:var(--fp-hover-text);color:var(--fp-hover-bg)!important}
+.fp-hoverbtn--bevel{border:2px outset var(--fp-hover-glow)}
+.fp-hoverbtn--bevel:hover{border-style:inset}
+
+/* ---------- Bullets, tables, rules ---------- */
+ul.fp-bullets{list-style:none;padding-left:6px;margin:.4em 0 .9em}
+ul.fp-bullets>li{background:var(--fp-bullet) no-repeat 0 .35em;padding-left:18px;margin:3px 0}
+table.fp-table{border-collapse:collapse;margin-top:8px;margin-bottom:8px;font-size:14px}
+table.fp-table[align="center"]{margin-left:auto;margin-right:auto}
+table.fp-table th,table.fp-table td{border:1px solid var(--fp-table-border);padding:4px 6px;vertical-align:top}
+table.fp-table th{background:var(--fp-table-head);color:var(--fp-table-head-text);font:bold 12px var(--fp-nav-font)}
+table.fp-table tr:nth-child(even) td{background:var(--fp-table-alt)}
+
+/* ---------- Hit Counter ---------- */
+.fp-counter{display:inline-flex;gap:1px;padding:2px;background:#000;border:2px inset #808080;vertical-align:middle}
+.fp-digit{display:inline-block;width:12px;height:18px;line-height:18px;text-align:center;background:#000;color:#fff;
+  font:bold 14px "Courier New",Courier,monospace}
+.fp-counter--led .fp-digit{color:#33ff33;text-shadow:0 0 3px #00ff00}
+.fp-counter--odometer{background:#333}
+.fp-counter--odometer .fp-digit{background:linear-gradient(#ddd,#fff 45%,#bbb);color:#000;border-left:1px solid #777}
+.fp-counter-label{font:var(--fp-small-font)}
+
+/* ---------- Marquee (CSS, accessible) / blink ---------- */
+/* width:0 + min-width:100% stops the nowrap text from stretching auto-width layout tables */
+.fp-marquee{display:block;width:0;min-width:100%;box-sizing:border-box;overflow:hidden;white-space:nowrap;background:var(--fp-marquee-bg,transparent);color:var(--fp-marquee-text,inherit);
+  font:bold 14px var(--fp-nav-font);padding:3px 0}
+.fp-marquee>span{display:inline-block;padding-left:100%;animation:fp-marquee var(--fp-marquee-speed,18s) linear infinite}
+.fp-marquee:hover>span,.fp-marquee:focus-within>span{animation-play-state:paused}
+@keyframes fp-marquee{to{transform:translateX(-100%)}}
+/* direction="right" */
+.fp-marquee--right>span{animation-name:fp-marquee-r}
+@keyframes fp-marquee-r{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+/* behavior="alternate": bounces between the edges (keep the text shorter than the box) */
+.fp-marquee--alternate>span{padding-left:0;animation:fp-marquee-alt var(--fp-marquee-speed,6s) ease-in-out infinite alternate}
+@keyframes fp-marquee-alt{from{transform:translateX(0)}to{transform:translateX(calc(var(--fp-marquee-w,100cqw) - 100%))}}
+.fp-marquee--alternate{container-type:inline-size}
+.fp-blink{animation:fp-blink 1.2s steps(2,start) infinite}
+@keyframes fp-blink{to{visibility:hidden}}
+
+/* ---------- DHTML effects & page transition ---------- */
+.fp-transition{animation:fp-fade .7s ease-out both}
+@keyframes fp-fade{from{opacity:0}}
+.fp-flyin{animation:fp-flyin .9s ease-out both}
+.fp-flyin--right{animation-name:fp-flyin-r}
+.fp-flyin--d1{animation-delay:.25s} .fp-flyin--d2{animation-delay:.5s} .fp-flyin--d3{animation-delay:.75s}
+@keyframes fp-flyin{from{transform:translateX(-110vw)}}
+@keyframes fp-flyin-r{from{transform:translateX(110vw)}}
+.fp-spin{animation:fp-spin 4s linear infinite;display:inline-block}
+@keyframes fp-spin{to{transform:rotate(360deg)}}
+
+/* ---------- Countdown ("Only 43 days until Y2K!") ---------- */
+.fp-countdown{display:inline-flex;gap:4px;align-items:flex-end;flex-wrap:wrap;justify-content:center}
+.fp-countdown .fp-cd-unit{display:inline-flex;flex-direction:column;align-items:center;font:var(--fp-small-font)}
+.fp-countdown .fp-cd-num{display:inline-block;min-width:2.2em;padding:2px 4px;background:#000;color:#ff3333;border:2px inset #808080;
+  font:bold 22px/1 "Courier New",Courier,monospace;text-align:center}
+
+/* ---------- WordArt headings (Office 97 WordArt pasted as an image) ---------- */
+.fp-wordart{display:inline-block;font:bold 40px/1.1 Impact,"Arial Black",sans-serif;letter-spacing:1px;color:#ff0;
+  filter:drop-shadow(3px 3px 0 #000080)}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .fp-wordart--rainbow,.fp-wordart--chrome,.fp-wordart--fire,.fp-wordart--ocean{-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent}
+  .fp-wordart--rainbow{background-image:linear-gradient(90deg,#f00,#f90,#ff0,#0c0,#0cf,#00f,#c0f)}
+  .fp-wordart--chrome{background-image:linear-gradient(#fff 0,#9ab 45%,#456 50%,#cde 75%,#fff);filter:drop-shadow(2px 2px 0 #000)}
+  .fp-wordart--fire{background-image:linear-gradient(#ff0,#f90 50%,#c00);filter:drop-shadow(2px 2px 0 #300)}
+  .fp-wordart--ocean{background-image:linear-gradient(#cff,#09f 50%,#006);filter:drop-shadow(2px 2px 0 #001)}
+}
+.fp-wordart--slant{transform:skewX(-12deg)}
+.fp-wordart--wave{transform:perspective(300px) rotateX(18deg)}
+
+/* ---------- Badges 88x31 ---------- */
+.fp-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:8px 0}
+.fp-badge{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box;width:88px;height:31px;
+  padding:1px 3px;border:1px solid #000;outline:1px solid #fff;outline-offset:-2px;background:#000080;color:#fff!important;
+  font:bold 9px/1.05 Verdana,Arial,sans-serif;text-align:center;text-transform:uppercase;text-decoration:none!important;overflow:hidden}
+.fp-badge--gray{background:linear-gradient(#e8e8e8,#a8a8a8);color:#000!important;outline-color:#fff}
+.fp-badge--black{background:#000;color:#ffff00!important;outline-color:#666}
+.fp-badge--green{background:#006400;color:#ccffcc!important;outline-color:#9f9}
+.fp-badge--red{background:#990000;color:#fff!important;outline-color:#f99}
+.fp-badge b{display:block;font-size:11px}
+
+/* ---------- Photo Gallery (FrontPage 2002) + photo frames ---------- */
+.fp-gallery{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0}
+.fp-photo{display:inline-block;width:160px;margin:0;padding:6px;background:#fff;color:#000;border:2px outset #ddd;text-align:center;
+  font:11px/1.3 Verdana,Arial,sans-serif;vertical-align:top}
+.fp-photo img,.fp-photo .fp-photo-empty{display:block;width:100%;height:120px;object-fit:cover;border:1px solid #000}
+.fp-photo .fp-photo-empty{box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:6px;
+  background:repeating-linear-gradient(45deg,#eee 0 8px,#ddd 8px 16px);color:#555;font-style:italic}
+.fp-photo figcaption{margin-top:4px}
+
+/* ---------- Under construction ---------- */
+.fp-construction{display:block;overflow:hidden;margin:10px 0;padding:8px 10px;background:#ffff99;color:#000;
+  border:6px solid transparent;border-image:repeating-linear-gradient(45deg,#000 0 8px,#ffd700 8px 16px) 6;
+  font:bold 13px Arial,sans-serif}
+.fp-construction>svg,.fp-construction>img{float:left;margin:0 10px 0 0}
+
+/* ---------- Forms: feedback, search, guestbook ---------- */
+.fp-form{background:var(--fp-form-bg,#e8e8e8);color:#000;border:2px groove #a0a0a0;padding:8px 10px;margin:10px 0;font:14px var(--fp-body-font)}
+.fp-form label{font:bold 12px var(--fp-nav-font)}
+.fp-form fieldset{border:2px groove #c0c0c0;margin:6px 0;padding:4px 8px}
+.fp-form legend{font:bold 12px var(--fp-nav-font);padding:0 4px}
+.fp-form a:link,.fp-confirm a:link{color:#0000ee} .fp-form a:visited,.fp-confirm a:visited{color:#551a8b}
+.fp-form input[type=text],.fp-form input[type=email],.fp-form input[type=tel],.fp-form input[type=search],.fp-form input[type=url],
+.fp-form select,.fp-form textarea{font:13px "Courier New",monospace;border:2px inset #c0c0c0;background:#fff;color:#000;padding:2px 3px;
+  max-width:100%;box-sizing:border-box;border-radius:0}
+.fp-form textarea{width:100%;min-height:90px}
+.fp-form table td{padding:2px 4px;vertical-align:top}
+.fp-form .fp-btn{min-width:90px}
+.fp-confirm{background:#ffffe0;color:#000;border:1px solid #000;padding:8px 10px;margin:10px 0}
+.fp-confirm dt{font-weight:bold;font-family:var(--fp-nav-font);font-size:12px}
+.fp-confirm dd{margin:0 0 4px 16px}
+.fp-note{font:italic 11px/1.3 Verdana,Arial,sans-serif;color:var(--fp-note,#555)}
+.fp-form .fp-note,.fp-confirm .fp-note{color:#333}  /* forms are always light gray, whatever the theme */
+.fp-gb-entry{border-top:1px dashed var(--fp-panel-border);padding:6px 0;font-size:14px;overflow-wrap:anywhere}
+.fp-gb-entry .fp-gb-meta{font:var(--fp-small-font);color:var(--fp-note,#555)}
+.fp-search-results{font:13px var(--fp-body-font)}
+.fp-search-results mark{background:#ffff00;color:#000}
+
+/* ---------- Collapsible outline (FrontPage 2000 DHTML) ---------- */
+details.fp-outline{margin:2px 0 2px 4px}
+details.fp-outline>summary{cursor:pointer;list-style:none;color:var(--fp-link);text-decoration:underline}
+details.fp-outline>summary::-webkit-details-marker{display:none}
+details.fp-outline>summary::before{content:"+ ";font-family:"Courier New",monospace;text-decoration:none;display:inline-block;width:1.2em}
+details.fp-outline[open]>summary::before{content:"\2013 "}
+details.fp-outline>:not(summary){margin-left:1.4em}
+
+/* ---------- Banner Ad Manager ---------- */
+.fp-adrotator{text-align:center;margin:6px auto}
+.fp-adrotator>*{display:inline-block}
+.fp-adrotator>[hidden]{display:none}
+.fp-ad{display:inline-flex;align-items:center;justify-content:center;width:468px;max-width:100%;height:60px;box-sizing:border-box;
+  padding:2px 6px;border:1px solid #000;font:bold 16px Arial,sans-serif;text-align:center;text-decoration:none!important}
+/* 120x60 "button" ad: the size that fits a 150px left border. Used automatically inside .fp-side */
+.fp-ad--button,.fp-side .fp-ad{width:120px;height:60px;font-size:11px;line-height:1.15}
+@media (max-width:700px){.fp-ad{width:100%}}
+
+/* ---------- Frames emulation ---------- */
+.fp-frameset{display:grid;grid-template-columns:var(--fp-frame-left,170px) 1fr;grid-template-rows:auto 1fr;height:100vh;margin:-8px}
+.fp-frame{overflow:auto;padding:8px;background:var(--fp-panel) var(--fp-panel-image)}
+.fp-frame--banner{grid-column:1/-1;border-bottom:6px ridge #c0c0c0}
+.fp-frame--contents{border-right:6px ridge #c0c0c0;background:var(--fp-side) var(--fp-side-image)}
+iframe.fp-frame-target{width:100%;height:100%;border:0;display:block}
+
+/* ---------- Small screens: stack the layout table, keep everything reachable ---------- */
+@media (max-width:700px){
+  body{margin:4px}
+  table.fp-layout,table.fp-layout>tbody,table.fp-layout>tbody>tr,table.fp-layout>tbody>tr>td,
+  table.fp-cols,table.fp-cols>tbody,table.fp-cols>tbody>tr,table.fp-cols>tbody>tr>td{display:block;width:auto!important;box-sizing:border-box}
+  /* phones: nav first, then the content, then the sidebar extras (counter, badges, ads) */
+  table.fp-layout>tbody>tr{display:flex;flex-direction:column}
+  table.fp-layout td.fp-side{display:contents}
+  table.fp-layout td.fp-side>*{order:3;margin-left:8px;margin-right:8px}
+  table.fp-layout td.fp-side>.fp-navbar-v{order:1;margin:6px 8px}
+  table.fp-layout td.fp-main{order:2}
+  .fp-navbar-v{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .fp-navbar-v .fp-btn{min-width:0;flex:1 1 40%}
+  .fp-banner{font-size:22px}
+  .fp-frameset{display:block;height:auto;margin:0}
+  .fp-frame--contents,.fp-frame--banner{border-right:0;border-bottom:6px ridge #c0c0c0}
+  iframe.fp-frame-target{height:80vh}
+  table.fp-table{font-size:13px}
+  .fp-form table,.fp-form tbody,.fp-form tr,.fp-form td{display:block;width:auto}
+  .fp-form input[type=text],.fp-form input[type=email],.fp-form input[type=tel],.fp-form input[type=search],.fp-form select{width:100%}
+}
+
+/* ---------- Reduced motion: keep the look, drop the movement ---------- */
+@media (prefers-reduced-motion:reduce){
+  .fp-marquee{white-space:normal}
+  .fp-marquee>span{animation:none;padding-left:0}
+  .fp-blink,.fp-transition,.fp-flyin,.fp-spin{animation:none!important}
+}
+/* ---------- Print: a clean black-on-white copy of the content (recipes, price lists, directions) ---------- */
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  .fp-transition,.fp-flyin,.fp-spin,.fp-blink{animation:none!important;opacity:1!important;transform:none!important;visibility:visible!important}
+  .fp-marquee{white-space:normal;width:auto;min-width:0}
+  .fp-marquee>span{animation:none;padding-left:0}
+  .fp-navbar,.fp-navbar-v,.fp-adrotator,.fp-badges,.fp-counter-label,.fp-form,.fp-gb-entries,.fp-textnav,.fp-hoverbtn,
+  td.fp-side,.fp-frame--contents,[data-fp-midi],.fp-noprint{display:none!important}
+  table.fp-layout,td.fp-main,.fp-box,.fp-frame{background:#fff!important;border-color:#999!important}
+  .fp-banner{background:none!important;color:#000!important;text-shadow:none!important;border:0!important;outline:0!important;
+    border-bottom:2px solid #000!important;padding:0 0 4px;text-align:left}
+  .fp-banner small{color:#000}
+  .fp-wordart{background:none!important;-webkit-text-fill-color:#000!important;color:#000!important;filter:none!important;transform:none!important}
+  h1,h2,h3,h4{color:#000!important;break-after:avoid}
+  a{color:#000!important}
+  ul.fp-bullets{list-style:disc;padding-left:20px}
+  ul.fp-bullets>li{background:none;padding-left:0}
+  table.fp-table th{background:#ddd!important;color:#000!important}
+  table.fp-table td{background:#fff!important}
+  tr,img,svg,.fp-box{break-inside:avoid}
+}
+
+/* Theme: network-blitz — homage to FrontPage's "Network Blitz": midnight circuit board, neon green
+   and cyan, terminal type. Good for LAN parties, hackers' homepages, ISPs, sci-fi fan sites. */
+:root{
+  --fp-bg:#000022;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%23000022'/><path d='M0 16H20L28 24H64M40 0V12L48 20V64M0 48H12L20 40H34' stroke='%23062a4a' stroke-width='2' fill='none'/><g fill='%230a4d7a'><circle cx='20' cy='16' r='2'/><circle cx='48' cy='20' r='2'/><circle cx='34' cy='40' r='2'/></g></svg>");
+  --fp-text:#d6ecff; --fp-link:#5cd6ff; --fp-vlink:#c99cff; --fp-alink:#fff;
+  --fp-body-font:Verdana,Geneva,Arial,sans-serif; --fp-h-font:"Courier New",Courier,monospace; --fp-h:#33ff99;
+  --fp-panel:rgba(0,10,40,.88); --fp-side:rgba(0,30,60,.9); --fp-panel-border:#1f6f9f;
+  --fp-banner-bg:#000; --fp-banner-image:repeating-linear-gradient(#000 0 2px,#001a10 2px 4px);
+  --fp-banner-text:#33ff99; --fp-banner-shadow:#006633;
+  --fp-banner-font:bold 30px/1.1 "Courier New",Courier,monospace;
+  --fp-btn-bg:#00121f; --fp-btn-text:#33ff99; --fp-btn-light:#33ff99; --fp-btn-dark:#0a5a33;
+  --fp-btn-hover-bg:#003322; --fp-btn-hover-text:#ccffe6; --fp-btn-current-bg:#33ff99; --fp-btn-current-text:#000;
+  --fp-hover-bg:#001a33; --fp-hover-text:#5cd6ff; --fp-hover-glow:#0b5f99;
+  --fp-rule-h:2px; --fp-rule-bg:repeating-linear-gradient(90deg,#33ff99 0 4px,transparent 4px 8px);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path d='M2 1L8 5 2 9Z' fill='%2333ff99'/></svg>");
+  --fp-table-head:#003322; --fp-table-head-text:#33ff99; --fp-table-border:#1f6f9f; --fp-table-alt:rgba(0,40,80,.6);
+  --fp-form-bg:#c0c0c0; --fp-note:#9fc4e0; --fp-focus:#ffff00;
+}
+body{font-size:14px}
+.fp-banner{border:1px solid #33ff99;text-transform:uppercase;letter-spacing:3px}
+.fp-banner small{color:#5cd6ff}
+.fp-btn{font-family:"Courier New",monospace;text-transform:uppercase}
+.fp-box>.fp-box-title{color:#33ff99}
+
+/* ---- page-specific styles below ---- */
+</style>
+</head>
+<body class="fp-transition">
+<div class="fp-page">
+<table class="fp-layout" width="100%" border="0" cellspacing="0" cellpadding="8">
+<tr><td colspan="2" class="fp-border-top">
+<div class="fp-banner" role="banner"><h1>LAN Party HQ</h1><small>A demo of the &quot;network-blitz&quot; theme</small></div>
+</td></tr>
+<tr>
+<td class="fp-side">
+<nav class="fp-navbar-v" aria-label="Main menu">
+  <a class="fp-btn" href="#content">Home</a>
+  <a class="fp-btn" href="#news">What's New</a>
+  <a class="fp-btn" href="#services">Services</a>
+  <a class="fp-btn" href="#guestbook">Guestbook</a>
+</nav>
+<p class="fp-center"><svg class="fp-spin" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-label="World Wide Web"><circle cx="16" cy="16" r="14" fill="#1e5bd8" stroke="#00105a" stroke-width="2"/><path d="M8 9c3 1 4 4 7 3s3 4 1 5-4 1-3 4 1 6-2 6M20 5c2 2 6 2 7 6s-3 3-4 6 2 5 0 7" fill="#2fa84f" stroke="#145a28"/><ellipse cx="16" cy="16" rx="6" ry="14" fill="none" stroke="#9fd0ff" stroke-width=".8"/><path d="M2 16h28M4 9h24M4 23h24" stroke="#9fd0ff" stroke-width=".8"/></svg>
+</p><div class="fp-adrotator" data-fp-rotator="4000"><a class="fp-ad" href="#services" style="background:#ff0;color:#c00">Click here for specials!</a><a class="fp-ad" href="#guestbook" style="background:#000080;color:#fff">Sign our guestbook!</a></div>
+</td>
+<td class="fp-main" id="content">
+<div class="fp-marquee"><span>*** Welcome to the LAN Party HQ home page! *** Bookmark us today! *** This is a demo of the network-blitz theme ***</span></div>
+<h1 class="fp-center">Welcome to Our Home Page!</h1>
+<p align="center"><font face="Verdana, Arial" size="2">Thank you for visiting. This page is a <b>demo</b> of the <b>network-blitz</b> theme from the FrontPage 90s Web Builder skill. Everything you see is plain HTML, CSS and a little JavaScript.</font></p>
+<p align="center"><a class="fp-hoverbtn" href="#services">Our Services</a> <a class="fp-hoverbtn fp-hoverbtn--fill" href="#guestbook">Sign Guestbook</a></p>
+<p class="fp-center fp-counter-label">You are visitor number <span class="fp-counter" data-fp-counter="demo-network-blitz" data-digits="6">000001</span><br><span class="fp-note">(demo counter: counts visits from this browser only)</span></p>
+
+<h2 id="news">What's New</h2>
+<table class="fp-cols" cellpadding="4"><tr><td width="60%" valign="top">
+<ul class="fp-bullets"><li><b>12/14/98</b> <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="52" height="34" viewBox="0 -1 52 34" aria-label="New!"><path d="M26 0l4 5 7-3 1 6 8-1-2 6 8 3-6 4 5 5-8 1 1 6-8-2-3 5-7-4-7 4-3-5-8 2 1-6-8-1 5-5-6-4 8-3-2-6 8 1 1-6 7 3z" fill="#ff0" stroke="#d00" stroke-width="1.5"/><ellipse cx="26" cy="16.5" rx="15" ry="7" fill="#ff0"/><text x="26" y="20" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="10" text-anchor="middle" textLength="26" lengthAdjust="spacingAndGlyphs" fill="#d00">NEW!</text></svg>
+ New guestbook added. Please sign it!</li><li><b>11/02/98</b> We now have e-mail!</li><li><b>10/10/98</b> Site launched.</li></ul>
+</td><td width="40%" valign="top"><div class="fp-box"><span class="fp-box-title">Quick Links</span>
+<details class="fp-outline" open><summary>About us</summary><ul class="fp-bullets"><li><a href="#services">Services</a></li><li><a href="#guestbook">Guestbook</a></li></ul></details></div></td></tr></table>
+<div class="fp-construction"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="48" height="40" viewBox="0 0 48 40" shape-rendering="crispEdges" aria-label="Under construction"><rect x="6" y="22" width="4" height="16" fill="#555"/><rect x="38" y="22" width="4" height="16" fill="#555"/><rect x="2" y="12" width="44" height="12" fill="#ffd700" stroke="#000" stroke-width="2"/><path d="M8 13l-6 10M18 13l-10 10M28 13l-10 10M38 13l-10 10M46 15l-8 8" stroke="#000" stroke-width="4"/><circle cx="8" cy="7" r="4" fill="#ff8000" stroke="#000"/><circle cx="40" cy="7" r="4" fill="#ff8000" stroke="#000"/><rect x="0" y="37" width="48" height="3" fill="#000"/></svg>
+ <b>Photo gallery under construction.</b> Check back soon!</div>
+<p class="fp-small"><a href="#content">Back to top</a></p>
+
+<h2 id="services">Services</h2>
+<div class="fp-scroll"><table class="fp-table" border="1" cellpadding="4" cellspacing="0"><tr><th>Service</th><th>Description</th><th align="right">Price</th></tr>
+<tr><td>Basic</td><td>The everyday option</td><td align="right">$19.95</td></tr><tr><td>Deluxe</td><td>Everything in Basic, and more</td><td align="right">$39.95</td></tr>
+<tr><td>Ultimate</td><td>The works!</td><td align="right">$59.95</td></tr></table></div>
+<hr><div class="fp-badges"><span class="fp-badge fp-badge--gray">Best viewed<b>800x600</b></span><span class="fp-badge fp-badge--black">Made with<b>FrontPage</b></span><a class="fp-badge" href="#guestbook">Sign my<b>Guestbook</b></a></div>
+<p class="fp-small"><a href="#content">Back to top</a></p>
+
+<h2 id="guestbook">Guestbook</h2>
+<form class="fp-form" data-fp-guestbook="demo-network-blitz" data-list="gb-network-blitz">
+<table><tr><td><label for="n-network-blitz">Your name:</label></td><td><input type="text" id="n-network-blitz" name="name" size="24" required></td></tr>
+<tr><td><label for="m-network-blitz">Comments:</label></td><td><textarea id="m-network-blitz" name="message" rows="3" cols="30" required></textarea></td></tr></table>
+<p><input class="fp-btn" type="submit" value="Sign Guestbook"> <input class="fp-btn" type="reset" value="Clear"></p>
+<p class="fp-note">Local demo guestbook: entries are saved only in your browser.</p></form><div id="gb-network-blitz" class="fp-gb-entries"></div>
+<p class="fp-small"><a href="#content">Back to top</a></p>
+</td>
+</tr>
+<tr><td colspan="2" class="fp-border-bottom">
+<hr>
+<p class="fp-textnav">[&nbsp;<a href="#content">Home</a>&nbsp;] [&nbsp;<a href="#news">What's New</a>&nbsp;] [&nbsp;<a href="#services">Services</a>&nbsp;] [&nbsp;<a href="#guestbook">Guestbook</a>&nbsp;]</p>
+<p>Send mail to <a href="mailto:webmaster@acme-demo.test">webmaster@acme-demo.test</a> with questions or comments about this web site.<br>
+Copyright &copy; 1998 LAN Party HQ. All rights reserved.<br>
+Last modified: December 14, 1998</p>
+</td></tr>
+</table>
+</div>
+<script>
+/* =====================================================================
+   FrontPage 90s kit — behaviors. Vanilla JS, no dependencies, works from file://.
+   Every feature switches on only when its markup exists, so include the whole
+   file and use what you need. User text is always inserted with textContent.
+   ===================================================================== */
+(function () {
+  'use strict';
+  var store = {
+    get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { window.localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+  };
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var lang = (document.documentElement.lang || navigator.language || 'en');
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  /* Field name for confirmations/messages: data-label > group legend (radios/checkboxes) > <label> > name */
+  function fieldLabel(f) {
+    var lab = f.getAttribute('data-label');
+    if (!lab && (f.type === 'radio' || f.type === 'checkbox')) {
+      var fs = f.closest && f.closest('fieldset'), lg = fs && fs.querySelector('legend');
+      lab = (lg && lg.textContent) || f.name;
+    }
+    if (!lab) lab = (f.labels && f.labels[0] && f.labels[0].textContent) || f.name;
+    return lab.replace(/\s+/g, ' ').replace(/[:*\s]+$/, '').trim();
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  /* Navigation bars: mark the current page (lets every page share an identical border). */
+  var here = location.pathname.split('/').pop() || 'index.html';
+  $all('.fp-navbar a[href], .fp-navbar-v a[href], .fp-textnav a[href]').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^[a-z]+:/i.test(href)) return;
+    var file = href.split('#')[0].split('?')[0].split('/').pop() || 'index.html';
+    if (file === here && !a.hasAttribute('aria-current')) a.setAttribute('aria-current', 'page');
+  });
+
+  /* Inside a frame, hide "View with frames" links (data-fp-noframes-only); outside, show them. */
+  var framed = false;
+  try { framed = window.self !== window.top; } catch (e) { framed = true; }
+  if (framed) $all('[data-fp-noframes-only]').forEach(function (n) { n.hidden = true; });
+
+  /* Frames: links that target a frame (<a target="main">) mark themselves current when clicked,
+     and the one matching the iframe's starting page is marked on load. */
+  $all('a[target]').forEach(function (a) {
+    var name = a.getAttribute('target'), frame = document.querySelector('iframe[name="' + name + '"]');
+    if (!frame) return;
+    var start = (frame.getAttribute('src') || '').split('#')[0];
+    if (start && a.getAttribute('href').split('#')[0] === start && !document.querySelector('a[target="' + name + '"][aria-current]')) a.setAttribute('aria-current', 'page');
+    a.addEventListener('click', function () {
+      $all('a[target="' + name + '"][aria-current]').forEach(function (o) { o.removeAttribute('aria-current'); });
+      a.setAttribute('aria-current', 'page');
+    });
+  });
+
+  /* Hit Counter: <span class="fp-counter" data-fp-counter="home" data-digits="6"></span>
+     Counts page loads in THIS browser only (localStorage). Label it honestly in the markup. */
+  $all('[data-fp-counter]').forEach(function (box) {
+    var key = 'fp-counter:' + (box.getAttribute('data-fp-counter') || here);
+    var start = parseInt(box.getAttribute('data-start') || '0', 10) || 0;
+    var digits = parseInt(box.getAttribute('data-digits') || '6', 10) || 6;
+    var n = (parseInt(store.get(key) || '0', 10) || 0) + 1;
+    store.set(key, String(n));
+    var s = String(start + n);
+    while (s.length < digits) s = '0' + s;
+    box.textContent = '';
+    box.setAttribute('role', 'img');
+    box.setAttribute('aria-label', String(start + n));
+    s.split('').forEach(function (d) {
+      var c = el('span', 'fp-digit', d);
+      c.setAttribute('aria-hidden', 'true');
+      box.appendChild(c);
+    });
+  });
+
+  /* Guestbook: <form data-fp-guestbook="mysite" data-list="gb-list"> with fields name, from, message.
+     Entries live in this browser only. Static entries already inside the list are kept below new ones. */
+  $all('form[data-fp-guestbook]').forEach(function (form) {
+    var key = 'fp-guestbook:' + (form.getAttribute('data-fp-guestbook') || here);
+    var list = document.getElementById(form.getAttribute('data-list') || '') || form.parentNode.querySelector('.fp-gb-entries');
+    if (!list) { list = el('div', 'fp-gb-entries'); form.parentNode.insertBefore(list, form.nextSibling); }
+    var status = form.querySelector('.fp-gb-status') || form.appendChild(el('p', 'fp-note fp-gb-status'));
+    status.setAttribute('role', 'status');
+    var staticEntries = $all('.fp-gb-entry', list);
+    function load() { try { return JSON.parse(store.get(key) || '[]') || []; } catch (e) { return []; } }
+    function render() {
+      $all('.fp-gb-entry[data-local]', list).forEach(function (n) { n.remove(); });
+      var first = staticEntries[0] || null;
+      load().forEach(function (it) {
+        var item = el('div', 'fp-gb-entry');
+        item.setAttribute('data-local', '');
+        var meta = el('div', 'fp-gb-meta');
+        meta.appendChild(el('b', '', it.name));
+        if (it.from) meta.appendChild(document.createTextNode(' — ' + it.from));
+        meta.appendChild(document.createTextNode(' · ' + it.date));
+        item.appendChild(meta);
+        item.appendChild(el('div', '', it.message));
+        list.insertBefore(item, first);
+      });
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = form.elements;
+      var name = ((f.name && f.name.value) || '').trim().slice(0, 60);
+      var message = ((f.message && f.message.value) || '').trim().slice(0, 1000);
+      if (!name || !message) { status.textContent = form.getAttribute('data-error') || 'Please fill in your name and a message.'; return; }
+      var entries = load();
+      entries.unshift({ name: name, from: ((f.from && f.from.value) || '').trim().slice(0, 60), message: message,
+        date: new Date().toLocaleDateString(lang) });
+      var ok = store.set(key, JSON.stringify(entries.slice(0, 50)));
+      render();
+      form.reset();
+      status.textContent = ok
+        ? (form.getAttribute('data-thanks') || 'Thanks for signing! Your entry is saved in this browser only.')
+        : (form.getAttribute('data-nostore') || 'Your browser blocked local storage, so this entry will disappear on reload.');
+    });
+    render();
+  });
+
+  /* Demo forms (Feedback / Order / Contact templates):
+     <form data-fp-demo data-confirm="confirm-id"> — shows a FrontPage-style confirmation page
+     listing what was typed, and makes clear nothing was sent. Leave data-fp-demo off for real backends. */
+  $all('form[data-fp-demo]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var box = document.getElementById(form.getAttribute('data-confirm') || '');
+      if (!box) { box = el('div', 'fp-confirm'); form.parentNode.insertBefore(box, form.nextSibling); }
+      var dl = box.querySelector('dl') || box.appendChild(el('dl'));
+      dl.textContent = '';
+      $all('input, select, textarea', form).forEach(function (f) {
+        if (!f.name || /^(submit|reset|button|hidden)$/i.test(f.type) || ((f.type === 'radio' || f.type === 'checkbox') && !f.checked)) return;
+        dl.appendChild(el('dt', '', fieldLabel(f)));
+        dl.appendChild(el('dd', '', f.value || '—'));
+      });
+      box.hidden = false;
+      box.setAttribute('tabindex', '-1');
+      box.focus();
+    });
+  });
+
+  /* Search Form component: <form data-fp-search="#content" data-results="results-id"> with input name="q".
+     Searches the headings + text of the current page and lists matching sections. */
+  function fold(s) { return String(s).toLowerCase().normalize ? String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : String(s).toLowerCase(); }
+  $all('form[data-fp-search]').forEach(function (form) {
+    var label = form.getAttribute('data-found') || 'Number of documents found:';
+    /* Site-wide mode: data-fp-search="site" + theme/search-index.js from scripts/build_search_index.py */
+    if (form.getAttribute('data-fp-search') === 'site') {
+      var res = document.getElementById(form.getAttribute('data-results') || '') || form.appendChild(el('div', 'fp-search-results'));
+      res.setAttribute('role', 'status');
+      var target = form.getAttribute('data-target');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var q = fold(((form.elements.q && form.elements.q.value) || '').trim());
+        res.textContent = '';
+        if (!q) return;
+        var idx = window.FP_SEARCH_INDEX || [], words = q.split(/\s+/), hits = idx.filter(function (d) {
+          var hay = fold(d.title + ' ' + d.text);
+          return words.every(function (w) { return hay.indexOf(w) > -1; });
+        });
+        if (!window.FP_SEARCH_INDEX) { res.appendChild(el('p', 'fp-note', 'Search index missing: run scripts/build_search_index.py on the site folder.')); return; }
+        res.appendChild(el('p', '', label + ' ' + hits.length));
+        var tbl = el('table', 'fp-table'), head = el('tr');
+        if (!hits.length) return;
+        head.appendChild(el('th', '', form.getAttribute('data-col-title') || 'Document'));
+        head.appendChild(el('th', '', form.getAttribute('data-col-page') || 'Page'));
+        tbl.appendChild(head);
+        hits.slice(0, 50).forEach(function (d) {
+          var tr = el('tr'), td = el('td'), a = el('a', '', d.title);
+          a.href = d.url; if (target) a.target = target;
+          td.appendChild(a); tr.appendChild(td); tr.appendChild(el('td', '', d.page || d.url.split('#')[0])); tbl.appendChild(tr);
+        });
+        res.appendChild(tbl);
+      });
+      form.addEventListener('reset', function () { res.textContent = ''; });
+      return;
+    }
+    var scope = document.querySelector(form.getAttribute('data-fp-search') || 'body') || document.body;
+    var out = document.getElementById(form.getAttribute('data-results') || '') || form.appendChild(el('div', 'fp-search-results'));
+    out.setAttribute('role', 'status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = fold(((form.elements.q && form.elements.q.value) || '').trim());
+      out.textContent = '';
+      if (!q) return;
+      var heads = $all('h1, h2, h3', scope), hits = [];
+      heads.forEach(function (h, i) {
+        var text = h.textContent, n = h.nextElementSibling;
+        while (n && !/^H[1-3]$/.test(n.tagName) && !n.querySelector('h1,h2,h3')) { text += ' ' + n.textContent; n = n.nextElementSibling; }
+        if (fold(text).indexOf(q) > -1) {
+          if (!h.id) h.id = 'fp-sec-' + i;
+          hits.push(h);
+        }
+      });
+      out.appendChild(el('p', '', label + ' ' + hits.length));
+      if (!hits.length) return;
+      var ul = el('ul', 'fp-bullets');
+      hits.forEach(function (h) {
+        var li = el('li'), a = el('a', '', h.textContent.trim());
+        a.href = '#' + h.id;
+        li.appendChild(a); ul.appendChild(li);
+      });
+      out.appendChild(ul);
+    });
+    form.addEventListener('reset', function () { out.textContent = ''; });
+  });
+
+  /* Banner Ad Manager: <div class="fp-adrotator" data-fp-rotator="4000"> with 2+ children.
+     Pauses on hover/focus; does not rotate when the visitor prefers reduced motion. */
+  $all('[data-fp-rotator]').forEach(function (box) {
+    var items = Array.prototype.slice.call(box.children);
+    if (items.length < 2) return;
+    var i = 0, paused = false, ms = Math.max(2500, parseInt(box.getAttribute('data-fp-rotator'), 10) || 4000);
+    items.forEach(function (it, j) { it.hidden = j !== 0; });
+    if (reduceMotion) return;
+    box.addEventListener('mouseenter', function () { paused = true; });
+    box.addEventListener('mouseleave', function () { paused = false; });
+    box.addEventListener('focusin', function () { paused = true; });
+    box.addEventListener('focusout', function () { paused = false; });
+    setInterval(function () {
+      if (paused || document.hidden) return;
+      items[i].hidden = true; i = (i + 1) % items.length; items[i].hidden = false;
+    }, ms);
+  });
+
+  /* Timestamp component: <span data-fp-timestamp="long|short"></span> -> this file's real modified date.
+     For a fictional 1998 page, just write the date as plain text instead. */
+  $all('[data-fp-timestamp]').forEach(function (t) {
+    var d = new Date(document.lastModified);
+    if (isNaN(d)) return;
+    var long = t.getAttribute('data-fp-timestamp') !== 'short';
+    t.textContent = d.toLocaleDateString(lang, long ? { year: 'numeric', month: 'long', day: 'numeric' }
+      : { year: '2-digit', month: '2-digit', day: '2-digit' });
+  });
+
+  /* Message composer — an honest contact form that needs no backend:
+     <form data-fp-compose="whatsapp:5493415550199" data-subject="Consulta desde la web">  or  data-fp-compose="mailto:me@example.com"
+     Builds a message from the labeled fields and opens WhatsApp or the visitor's mail program with it ready to send.
+     The page itself sends nothing. */
+  $all('form[data-fp-compose]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var spec = form.getAttribute('data-fp-compose') || '', kind = spec.split(':')[0], dest = spec.slice(kind.length + 1);
+      var lines = [];
+      $all('input, select, textarea', form).forEach(function (f) {
+        if (!f.name || !f.value || /^(submit|reset|button|hidden)$/i.test(f.type) || ((f.type === 'radio' || f.type === 'checkbox') && !f.checked)) return;
+        lines.push(fieldLabel(f) + ': ' + f.value);
+      });
+      var body = lines.join('\n'), subject = form.getAttribute('data-subject') || document.title;
+      if (kind === 'whatsapp') {
+        window.open('https://wa.me/' + dest.replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent(subject + '\n\n' + body), '_blank', 'noopener');
+      } else {
+        location.href = 'mailto:' + dest + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+    });
+  });
+
+  /* "Background MIDI", minus the autoplay: <button class="fp-btn" type="button" data-fp-midi="E5 D5 C5 D5 E5 E5 E5:2 - D5 D5 D5:2"
+     data-tempo="160" data-stop-label="■ Stop">♪ Play MIDI</button>. Square-wave chiptune via WebAudio, only on click.
+     Notes: letter + optional # or b + octave 0-8 (e.g. C4, F#5, Bb3), ":2" = two beats, "-" = rest. */
+  $all('[data-fp-midi]').forEach(function (btn) {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) { btn.disabled = true; return; }
+    var ctx = null, oscs = [], timer = null, playLabel = btn.textContent;
+    var NOTE = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+    function stop() {
+      oscs.forEach(function (o) { try { o.stop(); } catch (e) {} });
+      oscs = []; clearTimeout(timer); timer = null; btn.textContent = playLabel; btn.setAttribute('aria-pressed', 'false');
+    }
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', function () {
+      if (timer) { stop(); return; }
+      ctx = ctx || new AC();
+      var beat = 60 / (parseInt(btn.getAttribute('data-tempo') || '150', 10) || 150), t = ctx.currentTime + 0.05;
+      (btn.getAttribute('data-fp-midi') || '').trim().split(/\s+/).forEach(function (tok) {
+        var parts = tok.split(':'), len = (parseFloat(parts[1]) || 1) * beat, m = /^([A-G])([#b]?)(\d)$/.exec(parts[0]);
+        if (m) {
+          var midi = 12 * (parseInt(m[3], 10) + 1) + NOTE[m[1]] + (m[2] === '#' ? 1 : m[2] === 'b' ? -1 : 0);
+          var o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'square'; o.frequency.value = 440 * Math.pow(2, (midi - 69) / 12);
+          g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.05, t + 0.01);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + len * 0.9);
+          o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + len); oscs.push(o);
+        }
+        t += len;
+      });
+      btn.textContent = btn.getAttribute('data-stop-label') || '■ Stop';
+      btn.setAttribute('aria-pressed', 'true');
+      timer = setTimeout(stop, (t - ctx.currentTime) * 1000 + 100);
+    });
+  });
+
+  /* Countdown: <span class="fp-countdown" data-fp-countdown="2027-03-14T21:00:00-03:00"
+     data-units="days|hours|min|sec" data-done="¡Llegó el día!"></span>  (always give the UTC offset) */
+  $all('[data-fp-countdown]').forEach(function (box) {
+    var target = new Date(box.getAttribute('data-fp-countdown')).getTime();
+    if (isNaN(target)) return;
+    var units = (box.getAttribute('data-units') || 'days|hours|min|sec').split('|'), cells = [];
+    box.textContent = '';
+    box.setAttribute('role', 'timer');
+    units.forEach(function (u) {
+      var unit = el('span', 'fp-cd-unit'), num = el('span', 'fp-cd-num', '--');
+      unit.appendChild(num); unit.appendChild(el('span', '', u)); box.appendChild(unit); cells.push(num);
+    });
+    function tick() {
+      var ms = target - Date.now();
+      if (ms <= 0) { box.textContent = box.getAttribute('data-done') || 'Today!'; clearInterval(timer); return; }
+      var s = Math.floor(ms / 1000), parts = [Math.floor(s / 86400), Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60];
+      cells.forEach(function (c, i) { c.textContent = String(parts[i]).length < 2 ? '0' + parts[i] : String(parts[i]); });
+      box.setAttribute('aria-label', parts[0] + ' ' + units[0]);
+    }
+    var timer = setInterval(tick, 1000);
+    tick();
+  });
+
+  /* Optional welcome status line: <p data-fp-greeting></p> -> "Good morning!" style text by local hour. */
+  $all('[data-fp-greeting]').forEach(function (g) {
+    var h = new Date().getHours();
+    var words = (g.getAttribute('data-fp-greeting') || 'Good morning!|Good afternoon!|Good evening!').split('|');
+    g.textContent = h < 12 ? words[0] : h < 19 ? (words[1] || words[0]) : (words[2] || words[0]);
+  });
+})();
+
+</script>
+</body>
+</html>

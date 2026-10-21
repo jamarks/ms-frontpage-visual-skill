@@ -1,0 +1,21 @@
+/* Theme: romanesque — homage to FrontPage's "Romanesque": marble, burgundy and gold, classical
+   serif capitals. Good for law firms, churches, museums, weddings, hotels, wine. */
+:root{
+  --fp-bg:#ebe5d8;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><rect width='120' height='120' fill='%23ebe5d8'/><path d='M0 30C20 26 30 40 50 34S90 10 120 22M0 90C25 80 45 98 70 86S100 70 120 80M20 0C30 30 10 60 30 120' stroke='%23d9d0bd' stroke-width='1.2' fill='none'/></svg>");
+  --fp-text:#2a1a14; --fp-link:#7a1010; --fp-vlink:#5a3a50; --fp-alink:#c00;
+  --fp-body-font:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif; --fp-h-font:"Palatino Linotype","Book Antiqua",Palatino,serif; --fp-h:#6d1a1a;
+  --fp-panel:#f8f4ea; --fp-side:#e8dfcc; --fp-panel-border:#b8952a;
+  --fp-banner-bg:#6d1a1a; --fp-banner-text:#f0d27a; --fp-banner-shadow:#2a0505;
+  --fp-banner-font:bold 30px/1.1 "Palatino Linotype","Book Antiqua",Palatino,serif;
+  --fp-btn-bg:#7a1f1f; --fp-btn-text:#f0d27a; --fp-btn-light:#c9a227; --fp-btn-dark:#3d0a0a;
+  --fp-btn-hover-bg:#8f2a2a; --fp-btn-hover-text:#fff3c4; --fp-btn-current-bg:#c9a227; --fp-btn-current-text:#3d0a0a;
+  --fp-hover-bg:#6d1a1a; --fp-hover-text:#f0d27a; --fp-hover-glow:#b04040;
+  --fp-rule-h:5px; --fp-rule-bg:linear-gradient(#c9a227 0 1px,transparent 1px 4px,#c9a227 4px);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path d='M5 0L10 5 5 10 0 5Z' fill='%23c9a227' stroke='%236d1a1a' stroke-width='.8'/></svg>");
+  --fp-table-head:#6d1a1a; --fp-table-head-text:#f0d27a; --fp-table-border:#b8952a; --fp-table-alt:#f1eadb;
+  --fp-form-bg:#efe8d8;
+}
+.fp-banner{text-transform:uppercase;letter-spacing:5px;border:3px double #c9a227;outline:3px solid #6d1a1a}
+h1,h2{font-variant:small-caps;letter-spacing:1px}
+table.fp-layout{border:3px double #b8952a}

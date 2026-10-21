@@ -1,0 +1,23 @@
+/* Theme: blueprint — homage to FrontPage's "Blueprint": drafting-paper grid, navy ink,
+   outlined technical buttons, wide-tracked caps. Good for engineering, architecture, tech, B2B. */
+:root{
+  --fp-bg:#f4f8ff;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><rect width='40' height='40' fill='%23f4f8ff'/><path d='M0 10.5H40M0 20.5H40M0 30.5H40M10.5 0V40M20.5 0V40M30.5 0V40' stroke='%23d6e3f7'/><path d='M0 .5H40M.5 0V40' stroke='%23a9c2ea'/></svg>");
+  --fp-text:#0b1f4d; --fp-link:#0033cc; --fp-vlink:#5a2d91;
+  --fp-body-font:Verdana,Geneva,Arial,sans-serif; --fp-h-font:"Arial Narrow",Arial,Helvetica,sans-serif; --fp-h:#1a3c8c;
+  --fp-panel:transparent; --fp-side:rgba(255,255,255,.55); --fp-panel-border:#1a3c8c;
+  --fp-banner-bg:transparent; --fp-banner-text:#1a3c8c; --fp-banner-shadow:#c9d8f2;
+  --fp-banner-font:bold 30px/1.1 "Arial Narrow",Arial,sans-serif;
+  --fp-btn-bg:#ffffff; --fp-btn-text:#1a3c8c; --fp-btn-light:#1a3c8c; --fp-btn-dark:#1a3c8c;
+  --fp-btn-hover-bg:#1a3c8c; --fp-btn-hover-text:#fff; --fp-btn-current-bg:#dbe6f8; --fp-btn-current-text:#1a3c8c;
+  --fp-hover-bg:#1a3c8c; --fp-hover-text:#fff; --fp-hover-glow:#6f93d8;
+  --fp-rule-h:5px; --fp-rule-bg:linear-gradient(#1a3c8c 0 1px,transparent 1px 4px,#1a3c8c 4px);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='5' cy='5' r='3.5' fill='none' stroke='%231a3c8c'/><path d='M5 0V10M0 5H10' stroke='%231a3c8c'/></svg>");
+  --fp-table-head:#1a3c8c; --fp-table-head-text:#fff; --fp-table-border:#1a3c8c; --fp-table-alt:rgba(219,230,248,.6);
+  --fp-small-font:11px/1.35 Verdana,Arial,sans-serif;
+}
+body{font-size:13px}
+.fp-banner{border-top:3px double #1a3c8c;border-bottom:3px double #1a3c8c;text-transform:uppercase;letter-spacing:4px}
+.fp-banner small{color:#1a3c8c;letter-spacing:1px;text-transform:none}
+.fp-btn{border-width:1px;text-transform:uppercase;letter-spacing:1px;font-size:11px}
+h1,h2{text-transform:uppercase;letter-spacing:2px}

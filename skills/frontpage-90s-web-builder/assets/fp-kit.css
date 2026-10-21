@@ -1,0 +1,282 @@
+/* =====================================================================
+   FrontPage 90s kit — base styles (theme-neutral)
+   Pair with ONE file from assets/themes/*.css, which sets the --fp-* vars.
+   Classes are prefixed fp- so they never collide with the page's own CSS.
+   ===================================================================== */
+:root{
+  --fp-bg:#fff; --fp-bg-image:none; --fp-text:#000;
+  --fp-link:#0000ee; --fp-vlink:#551a8b; --fp-alink:#ff0000;
+  --fp-body-font:"Times New Roman",Times,serif;
+  --fp-h-font:Arial,Helvetica,sans-serif; --fp-h:#000080;
+  --fp-nav-font:Arial,Helvetica,sans-serif;
+  --fp-panel:#fff; --fp-panel-image:none; --fp-panel-border:#808080;
+  --fp-side:#dcdcdc; --fp-side-image:none;
+  --fp-banner-bg:#000080; --fp-banner-image:none; --fp-banner-text:#fff;
+  --fp-banner-font:bold 28px/1.1 Arial,Helvetica,sans-serif; --fp-banner-shadow:#000;
+  --fp-btn-bg:#c0c0c0; --fp-btn-image:none; --fp-btn-text:#000;
+  --fp-btn-light:#fff; --fp-btn-dark:#404040; --fp-btn-radius:0;
+  --fp-btn-hover-bg:#d4d4d4; --fp-btn-hover-text:#000;
+  --fp-btn-current-bg:#808080; --fp-btn-current-text:#fff;
+  --fp-hover-bg:#000080; --fp-hover-text:#ffff00; --fp-hover-glow:#6a6aff;
+  --fp-rule-h:2px; --fp-rule-bg:linear-gradient(#808080 50%,#fff 50%);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9'><rect width='9' height='9' fill='%23000080'/><rect x='2' y='2' width='5' height='5' fill='%236a6aff'/></svg>");
+  --fp-table-head:#000080; --fp-table-head-text:#fff; --fp-table-border:#808080; --fp-table-alt:#f0f0f0;
+  --fp-accent:#ff0000; --fp-small-font:11px/1.35 Verdana,Arial,sans-serif;
+  --fp-focus:#ff0000;
+}
+
+/* ---------- Page ---------- */
+html{background:var(--fp-bg) var(--fp-bg-image)}
+body{margin:8px;background:var(--fp-bg) var(--fp-bg-image);color:var(--fp-text);
+  font:16px/1.3 var(--fp-body-font);-webkit-text-size-adjust:100%}
+a:link{color:var(--fp-link)} a:visited{color:var(--fp-vlink)} a:active{color:var(--fp-alink)}
+a{text-decoration:underline}
+/* IE-style dotted focus rectangle: period-correct AND accessible */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2px dotted var(--fp-focus);outline-offset:2px}
+h1,h2,h3,h4{font-family:var(--fp-h-font);color:var(--fp-h);margin:.6em 0 .35em;line-height:1.15}
+h1{font-size:26px} h2{font-size:20px} h3{font-size:16px} h4{font-size:14px}
+p{margin:0 0 .8em}
+img{border:0;max-width:100%;height:auto}
+hr{border:0;height:var(--fp-rule-h);background:var(--fp-rule-bg);margin:12px 0}
+small,.fp-small{font:var(--fp-small-font)}
+.fp-center{text-align:center}
+.fp-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Layout: the centered 760px table ---------- */
+.fp-page{max-width:780px;margin:0 auto}
+.fp-page--wide{max-width:960px}
+table.fp-layout{width:100%;border-collapse:separate;background:var(--fp-panel) var(--fp-panel-image)}
+table.fp-layout>tbody>tr>td{vertical-align:top}
+td.fp-side{width:150px;background:var(--fp-side) var(--fp-side-image)}
+td.fp-main{background:var(--fp-panel) var(--fp-panel-image)}
+.fp-border-top{padding-bottom:4px}
+.fp-border-bottom{text-align:center;font:var(--fp-small-font)}
+.fp-box{border:2px groove var(--fp-panel-border);padding:6px 8px;margin:10px 0}
+.fp-box>.fp-box-title{display:block;margin:-6px -8px 6px;padding:2px 8px;background:var(--fp-table-head);
+  color:var(--fp-table-head-text);font:bold 12px var(--fp-nav-font);text-transform:uppercase;letter-spacing:.5px}
+.fp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* nested multi-column content table (2-3 columns side by side); stacks on phones like .fp-layout */
+table.fp-cols{width:100%;border-collapse:separate}
+table.fp-cols>tbody>tr>td{vertical-align:top}
+
+/* ---------- Page Banner component ---------- */
+.fp-banner{background:var(--fp-banner-bg) var(--fp-banner-image);background-size:auto 100%;
+  color:var(--fp-banner-text);font:var(--fp-banner-font);text-align:center;padding:12px 10px;
+  text-shadow:2px 2px 0 var(--fp-banner-shadow);margin:0 0 6px;letter-spacing:.5px}
+.fp-banner h1,.fp-banner .fp-banner-title{font:inherit;color:inherit;margin:0;letter-spacing:inherit;text-transform:inherit;font-variant:inherit}
+.fp-banner small{display:block;font:italic 13px var(--fp-body-font);text-shadow:none;margin-top:4px;letter-spacing:0}
+
+/* ---------- Navigation bars (theme buttons / text links) ---------- */
+.fp-navbar{display:flex;flex-wrap:wrap;justify-content:center;gap:3px;margin:4px 0}
+.fp-navbar-v{display:flex;flex-direction:column;gap:4px;margin:4px 0}
+.fp-btn{display:inline-block;box-sizing:border-box;min-width:100px;padding:4px 8px;background:var(--fp-btn-bg) var(--fp-btn-image);
+  color:var(--fp-btn-text)!important;font:bold 12px/1.2 var(--fp-nav-font);text-align:center;text-decoration:none!important;
+  border:2px solid;border-color:var(--fp-btn-light) var(--fp-btn-dark) var(--fp-btn-dark) var(--fp-btn-light);
+  border-radius:var(--fp-btn-radius);cursor:pointer}
+.fp-btn:hover{background-color:var(--fp-btn-hover-bg);background-image:var(--fp-btn-hover-image,none);color:var(--fp-btn-hover-text)!important}
+.fp-btn:active{border-color:var(--fp-btn-dark) var(--fp-btn-light) var(--fp-btn-light) var(--fp-btn-dark)}
+.fp-btn[aria-current="page"]{background-color:var(--fp-btn-current-bg);background-image:var(--fp-btn-current-image,none);color:var(--fp-btn-current-text)!important;
+  border-color:var(--fp-btn-dark) var(--fp-btn-light) var(--fp-btn-light) var(--fp-btn-dark)}
+button.fp-btn,input.fp-btn{font:bold 12px/1.2 var(--fp-nav-font)}
+.fp-textnav{text-align:center;font:var(--fp-small-font);margin:6px 0}
+.fp-textnav a[aria-current="page"]{font-weight:bold;text-decoration:none;color:var(--fp-text)}
+
+/* Hover Button (emulates FrontPage's Java applet: glow / fill / bevel effects) */
+.fp-hoverbtn{display:inline-block;box-sizing:border-box;min-width:130px;max-width:100%;min-height:26px;padding:5px 10px;line-height:1.3;background:var(--fp-hover-bg);
+  color:var(--fp-hover-text)!important;font:bold 12px Arial,sans-serif;text-align:center;text-decoration:none!important;
+  vertical-align:middle;margin:2px}
+.fp-hoverbtn:hover,.fp-hoverbtn:focus-visible{background:radial-gradient(ellipse at center,var(--fp-hover-glow) 0,var(--fp-hover-bg) 75%)}
+.fp-hoverbtn--fill:hover,.fp-hoverbtn--fill:focus-visible{background:var(--fp-hover-text);color:var(--fp-hover-bg)!important}
+.fp-hoverbtn--bevel{border:2px outset var(--fp-hover-glow)}
+.fp-hoverbtn--bevel:hover{border-style:inset}
+
+/* ---------- Bullets, tables, rules ---------- */
+ul.fp-bullets{list-style:none;padding-left:6px;margin:.4em 0 .9em}
+ul.fp-bullets>li{background:var(--fp-bullet) no-repeat 0 .35em;padding-left:18px;margin:3px 0}
+table.fp-table{border-collapse:collapse;margin-top:8px;margin-bottom:8px;font-size:14px}
+table.fp-table[align="center"]{margin-left:auto;margin-right:auto}
+table.fp-table th,table.fp-table td{border:1px solid var(--fp-table-border);padding:4px 6px;vertical-align:top}
+table.fp-table th{background:var(--fp-table-head);color:var(--fp-table-head-text);font:bold 12px var(--fp-nav-font)}
+table.fp-table tr:nth-child(even) td{background:var(--fp-table-alt)}
+
+/* ---------- Hit Counter ---------- */
+.fp-counter{display:inline-flex;gap:1px;padding:2px;background:#000;border:2px inset #808080;vertical-align:middle}
+.fp-digit{display:inline-block;width:12px;height:18px;line-height:18px;text-align:center;background:#000;color:#fff;
+  font:bold 14px "Courier New",Courier,monospace}
+.fp-counter--led .fp-digit{color:#33ff33;text-shadow:0 0 3px #00ff00}
+.fp-counter--odometer{background:#333}
+.fp-counter--odometer .fp-digit{background:linear-gradient(#ddd,#fff 45%,#bbb);color:#000;border-left:1px solid #777}
+.fp-counter-label{font:var(--fp-small-font)}
+
+/* ---------- Marquee (CSS, accessible) / blink ---------- */
+/* width:0 + min-width:100% stops the nowrap text from stretching auto-width layout tables */
+.fp-marquee{display:block;width:0;min-width:100%;box-sizing:border-box;overflow:hidden;white-space:nowrap;background:var(--fp-marquee-bg,transparent);color:var(--fp-marquee-text,inherit);
+  font:bold 14px var(--fp-nav-font);padding:3px 0}
+.fp-marquee>span{display:inline-block;padding-left:100%;animation:fp-marquee var(--fp-marquee-speed,18s) linear infinite}
+.fp-marquee:hover>span,.fp-marquee:focus-within>span{animation-play-state:paused}
+@keyframes fp-marquee{to{transform:translateX(-100%)}}
+/* direction="right" */
+.fp-marquee--right>span{animation-name:fp-marquee-r}
+@keyframes fp-marquee-r{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+/* behavior="alternate": bounces between the edges (keep the text shorter than the box) */
+.fp-marquee--alternate>span{padding-left:0;animation:fp-marquee-alt var(--fp-marquee-speed,6s) ease-in-out infinite alternate}
+@keyframes fp-marquee-alt{from{transform:translateX(0)}to{transform:translateX(calc(var(--fp-marquee-w,100cqw) - 100%))}}
+.fp-marquee--alternate{container-type:inline-size}
+.fp-blink{animation:fp-blink 1.2s steps(2,start) infinite}
+@keyframes fp-blink{to{visibility:hidden}}
+
+/* ---------- DHTML effects & page transition ---------- */
+.fp-transition{animation:fp-fade .7s ease-out both}
+@keyframes fp-fade{from{opacity:0}}
+.fp-flyin{animation:fp-flyin .9s ease-out both}
+.fp-flyin--right{animation-name:fp-flyin-r}
+.fp-flyin--d1{animation-delay:.25s} .fp-flyin--d2{animation-delay:.5s} .fp-flyin--d3{animation-delay:.75s}
+@keyframes fp-flyin{from{transform:translateX(-110vw)}}
+@keyframes fp-flyin-r{from{transform:translateX(110vw)}}
+.fp-spin{animation:fp-spin 4s linear infinite;display:inline-block}
+@keyframes fp-spin{to{transform:rotate(360deg)}}
+
+/* ---------- Countdown ("Only 43 days until Y2K!") ---------- */
+.fp-countdown{display:inline-flex;gap:4px;align-items:flex-end;flex-wrap:wrap;justify-content:center}
+.fp-countdown .fp-cd-unit{display:inline-flex;flex-direction:column;align-items:center;font:var(--fp-small-font)}
+.fp-countdown .fp-cd-num{display:inline-block;min-width:2.2em;padding:2px 4px;background:#000;color:#ff3333;border:2px inset #808080;
+  font:bold 22px/1 "Courier New",Courier,monospace;text-align:center}
+
+/* ---------- WordArt headings (Office 97 WordArt pasted as an image) ---------- */
+.fp-wordart{display:inline-block;font:bold 40px/1.1 Impact,"Arial Black",sans-serif;letter-spacing:1px;color:#ff0;
+  filter:drop-shadow(3px 3px 0 #000080)}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .fp-wordart--rainbow,.fp-wordart--chrome,.fp-wordart--fire,.fp-wordart--ocean{-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent}
+  .fp-wordart--rainbow{background-image:linear-gradient(90deg,#f00,#f90,#ff0,#0c0,#0cf,#00f,#c0f)}
+  .fp-wordart--chrome{background-image:linear-gradient(#fff 0,#9ab 45%,#456 50%,#cde 75%,#fff);filter:drop-shadow(2px 2px 0 #000)}
+  .fp-wordart--fire{background-image:linear-gradient(#ff0,#f90 50%,#c00);filter:drop-shadow(2px 2px 0 #300)}
+  .fp-wordart--ocean{background-image:linear-gradient(#cff,#09f 50%,#006);filter:drop-shadow(2px 2px 0 #001)}
+}
+.fp-wordart--slant{transform:skewX(-12deg)}
+.fp-wordart--wave{transform:perspective(300px) rotateX(18deg)}
+
+/* ---------- Badges 88x31 ---------- */
+.fp-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin:8px 0}
+.fp-badge{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box;width:88px;height:31px;
+  padding:1px 3px;border:1px solid #000;outline:1px solid #fff;outline-offset:-2px;background:#000080;color:#fff!important;
+  font:bold 9px/1.05 Verdana,Arial,sans-serif;text-align:center;text-transform:uppercase;text-decoration:none!important;overflow:hidden}
+.fp-badge--gray{background:linear-gradient(#e8e8e8,#a8a8a8);color:#000!important;outline-color:#fff}
+.fp-badge--black{background:#000;color:#ffff00!important;outline-color:#666}
+.fp-badge--green{background:#006400;color:#ccffcc!important;outline-color:#9f9}
+.fp-badge--red{background:#990000;color:#fff!important;outline-color:#f99}
+.fp-badge b{display:block;font-size:11px}
+
+/* ---------- Photo Gallery (FrontPage 2002) + photo frames ---------- */
+.fp-gallery{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0}
+.fp-photo{display:inline-block;width:160px;margin:0;padding:6px;background:#fff;color:#000;border:2px outset #ddd;text-align:center;
+  font:11px/1.3 Verdana,Arial,sans-serif;vertical-align:top}
+.fp-photo img,.fp-photo .fp-photo-empty{display:block;width:100%;height:120px;object-fit:cover;border:1px solid #000}
+.fp-photo .fp-photo-empty{box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:6px;
+  background:repeating-linear-gradient(45deg,#eee 0 8px,#ddd 8px 16px);color:#555;font-style:italic}
+.fp-photo figcaption{margin-top:4px}
+
+/* ---------- Under construction ---------- */
+.fp-construction{display:block;overflow:hidden;margin:10px 0;padding:8px 10px;background:#ffff99;color:#000;
+  border:6px solid transparent;border-image:repeating-linear-gradient(45deg,#000 0 8px,#ffd700 8px 16px) 6;
+  font:bold 13px Arial,sans-serif}
+.fp-construction>svg,.fp-construction>img{float:left;margin:0 10px 0 0}
+
+/* ---------- Forms: feedback, search, guestbook ---------- */
+.fp-form{background:var(--fp-form-bg,#e8e8e8);color:#000;border:2px groove #a0a0a0;padding:8px 10px;margin:10px 0;font:14px var(--fp-body-font)}
+.fp-form label{font:bold 12px var(--fp-nav-font)}
+.fp-form fieldset{border:2px groove #c0c0c0;margin:6px 0;padding:4px 8px}
+.fp-form legend{font:bold 12px var(--fp-nav-font);padding:0 4px}
+.fp-form a:link,.fp-confirm a:link{color:#0000ee} .fp-form a:visited,.fp-confirm a:visited{color:#551a8b}
+.fp-form input[type=text],.fp-form input[type=email],.fp-form input[type=tel],.fp-form input[type=search],.fp-form input[type=url],
+.fp-form select,.fp-form textarea{font:13px "Courier New",monospace;border:2px inset #c0c0c0;background:#fff;color:#000;padding:2px 3px;
+  max-width:100%;box-sizing:border-box;border-radius:0}
+.fp-form textarea{width:100%;min-height:90px}
+.fp-form table td{padding:2px 4px;vertical-align:top}
+.fp-form .fp-btn{min-width:90px}
+.fp-confirm{background:#ffffe0;color:#000;border:1px solid #000;padding:8px 10px;margin:10px 0}
+.fp-confirm dt{font-weight:bold;font-family:var(--fp-nav-font);font-size:12px}
+.fp-confirm dd{margin:0 0 4px 16px}
+.fp-note{font:italic 11px/1.3 Verdana,Arial,sans-serif;color:var(--fp-note,#555)}
+.fp-form .fp-note,.fp-confirm .fp-note{color:#333}  /* forms are always light gray, whatever the theme */
+.fp-gb-entry{border-top:1px dashed var(--fp-panel-border);padding:6px 0;font-size:14px;overflow-wrap:anywhere}
+.fp-gb-entry .fp-gb-meta{font:var(--fp-small-font);color:var(--fp-note,#555)}
+.fp-search-results{font:13px var(--fp-body-font)}
+.fp-search-results mark{background:#ffff00;color:#000}
+
+/* ---------- Collapsible outline (FrontPage 2000 DHTML) ---------- */
+details.fp-outline{margin:2px 0 2px 4px}
+details.fp-outline>summary{cursor:pointer;list-style:none;color:var(--fp-link);text-decoration:underline}
+details.fp-outline>summary::-webkit-details-marker{display:none}
+details.fp-outline>summary::before{content:"+ ";font-family:"Courier New",monospace;text-decoration:none;display:inline-block;width:1.2em}
+details.fp-outline[open]>summary::before{content:"\2013 "}
+details.fp-outline>:not(summary){margin-left:1.4em}
+details.fp-outline>summary>h2,details.fp-outline>summary>h3,details.fp-outline>summary>h4{display:inline;font:inherit;color:inherit;margin:0}
+
+/* ---------- Banner Ad Manager ---------- */
+.fp-adrotator{text-align:center;margin:6px auto}
+.fp-adrotator>*{display:inline-block}
+.fp-adrotator>[hidden]{display:none}
+.fp-ad{display:inline-flex;align-items:center;justify-content:center;width:468px;max-width:100%;height:60px;box-sizing:border-box;
+  padding:2px 6px;border:1px solid #000;font:bold 16px Arial,sans-serif;text-align:center;text-decoration:none!important}
+/* 120x60 "button" ad: the size that fits a 150px left border. Used automatically inside .fp-side */
+.fp-ad--button,.fp-side .fp-ad{width:120px;height:60px;font-size:11px;line-height:1.15}
+@media (max-width:700px){.fp-ad{width:100%}}
+
+/* ---------- Frames emulation ---------- */
+.fp-frameset{display:grid;grid-template-columns:var(--fp-frame-left,170px) 1fr;grid-template-rows:auto 1fr;height:100vh;margin:-8px}
+.fp-frame{overflow:auto;padding:8px;background:var(--fp-panel) var(--fp-panel-image)}
+.fp-frame--banner{grid-column:1/-1;border-bottom:6px ridge #c0c0c0}
+.fp-frame--contents{border-right:6px ridge #c0c0c0;background:var(--fp-side) var(--fp-side-image)}
+iframe.fp-frame-target{width:100%;height:100%;border:0;display:block}
+
+/* ---------- Small screens: stack the layout table, keep everything reachable ---------- */
+@media (max-width:700px){
+  body{margin:4px}
+  table.fp-layout,table.fp-layout>tbody,table.fp-layout>tbody>tr,table.fp-layout>tbody>tr>td,
+  table.fp-cols,table.fp-cols>tbody,table.fp-cols>tbody>tr,table.fp-cols>tbody>tr>td{display:block;width:auto!important;box-sizing:border-box}
+  /* phones: nav first, then the content, then the sidebar extras (counter, badges, ads) */
+  table.fp-layout>tbody>tr{display:flex;flex-direction:column}
+  table.fp-layout td.fp-side{display:contents}
+  table.fp-layout td.fp-side>*{order:3;margin-left:8px;margin-right:8px}
+  table.fp-layout td.fp-side>.fp-navbar-v{order:1;margin:6px 8px}
+  table.fp-layout td.fp-main{order:2}
+  .fp-navbar-v{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .fp-navbar-v .fp-btn{min-width:0;flex:1 1 40%}
+  .fp-banner{font-size:22px}
+  .fp-frameset{display:block;height:auto;margin:0}
+  .fp-frame--contents,.fp-frame--banner{border-right:0;border-bottom:6px ridge #c0c0c0}
+  iframe.fp-frame-target{height:80vh}
+  table.fp-table{font-size:13px}
+  .fp-form table,.fp-form tbody,.fp-form tr,.fp-form td{display:block;width:auto}
+  .fp-form input[type=text],.fp-form input[type=email],.fp-form input[type=tel],.fp-form input[type=search],.fp-form select{width:100%}
+}
+
+/* ---------- Reduced motion: keep the look, drop the movement ---------- */
+@media (prefers-reduced-motion:reduce){
+  .fp-marquee{white-space:normal}
+  .fp-marquee>span{animation:none;padding-left:0}
+  .fp-blink,.fp-transition,.fp-flyin,.fp-spin{animation:none!important}
+}
+/* ---------- Print: a clean black-on-white copy of the content (recipes, price lists, directions) ---------- */
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  .fp-transition,.fp-flyin,.fp-spin,.fp-blink{animation:none!important;opacity:1!important;transform:none!important;visibility:visible!important}
+  .fp-marquee{white-space:normal;width:auto;min-width:0}
+  .fp-marquee>span{animation:none;padding-left:0}
+  .fp-navbar,.fp-navbar-v,.fp-adrotator,.fp-badges,.fp-counter-label,.fp-form,.fp-gb-entries,.fp-textnav,.fp-hoverbtn,
+  td.fp-side,.fp-frame--contents,[data-fp-midi],.fp-noprint{display:none!important}
+  table.fp-layout,td.fp-main,.fp-box,.fp-frame{background:#fff!important;border-color:#999!important}
+  .fp-banner{background:none!important;color:#000!important;text-shadow:none!important;border:0!important;outline:0!important;
+    border-bottom:2px solid #000!important;padding:0 0 4px;text-align:left}
+  .fp-banner small{color:#000}
+  .fp-wordart{background:none!important;-webkit-text-fill-color:#000!important;color:#000!important;filter:none!important;transform:none!important}
+  h1,h2,h3,h4{color:#000!important;break-after:avoid}
+  a{color:#000!important}
+  ul.fp-bullets{list-style:disc;padding-left:20px}
+  ul.fp-bullets>li{background:none;padding-left:0}
+  table.fp-table th{background:#ddd!important;color:#000!important}
+  table.fp-table td{background:#fff!important}
+  tr,img,svg,.fp-box{break-inside:avoid}
+}

@@ -1,0 +1,24 @@
+/* Theme: starfield — the GeoCities / Angelfire personal homepage: black starry tile, neon type,
+   rainbow rule, Comic Sans. Loud on purpose. Good for fan sites, hobby pages, "my homepage". */
+:root{
+  --fp-bg:#000;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90'><rect width='90' height='90' fill='%23000'/><g fill='%23fff'><rect x='10' y='12' width='1' height='1'/><rect x='55' y='8' width='1' height='1'/><rect x='72' y='40' width='2' height='2'/><rect x='30' y='60' width='1' height='1'/><rect x='5' y='80' width='1' height='1'/><rect x='84' y='77' width='1' height='1'/></g><g fill='%23ffff66'><rect x='40' y='30' width='1' height='1'/><rect x='18' y='44' width='2' height='2'/></g><path d='M63 66h5M65.5 63.5v5' stroke='%23aaddff'/></svg>");
+  --fp-text:#ffffff; --fp-link:#00ffff; --fp-vlink:#ff66ff; --fp-alink:#ffff00;
+  --fp-body-font:"Comic Sans MS","Comic Sans","Chalkboard SE",cursive; --fp-h-font:"Comic Sans MS","Chalkboard SE",cursive; --fp-h:#ffff00;
+  --fp-panel:transparent; --fp-side:transparent; --fp-panel-border:#ff00ff;
+  --fp-banner-bg:transparent; --fp-banner-text:#ffff00; --fp-banner-shadow:#ff00ff;
+  --fp-banner-font:40px/1.05 Impact,"Arial Black",sans-serif;
+  --fp-btn-bg:#000; --fp-btn-text:#00ffff; --fp-btn-light:#00ffff; --fp-btn-dark:#006666;
+  --fp-btn-hover-bg:#330033; --fp-btn-hover-text:#ffff00; --fp-btn-current-bg:#ff00ff; --fp-btn-current-text:#000;
+  --fp-hover-bg:#000080; --fp-hover-text:#ffff00; --fp-hover-glow:#ff00ff;
+  --fp-rule-h:4px; --fp-rule-bg:linear-gradient(90deg,#f00,#f90,#ff0,#0f0,#0ff,#00f,#f0f);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M6 0l1.8 4 4.2.4-3.2 2.9 1 4.2L6 9.3 2.2 11.5l1-4.2L0 4.4 4.2 4Z' fill='%23ffff00'/></svg>");
+  --fp-table-head:#800080; --fp-table-head-text:#ffff00; --fp-table-border:#00ffff; --fp-table-alt:rgba(40,0,60,.7);
+  --fp-form-bg:#c0c0c0; --fp-note:#cccccc; --fp-focus:#ffff00;
+  --fp-marquee-bg:#000080; --fp-marquee-text:#ffff00;
+}
+.fp-banner{text-shadow:3px 3px 0 #ff00ff,6px 6px 0 #0000ff;letter-spacing:2px}
+.fp-banner small{color:#00ff00;text-shadow:none}
+.fp-btn{border-style:ridge;border-width:3px;border-color:#00ffff}
+.fp-box{border:3px ridge #ff00ff}
+.fp-box>.fp-box-title{background:#ff00ff;color:#000}

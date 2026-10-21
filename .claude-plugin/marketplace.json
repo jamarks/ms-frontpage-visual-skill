@@ -1,0 +1,21 @@
+{
+  "name": "ms-frontpage-visual-skill",
+  "owner": {
+    "name": "jamarks"
+  },
+  "metadata": {
+    "description": "Build websites that look like they were made with Microsoft FrontPage 97/98/2000.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "frontpage-90s-web-builder",
+      "description": "FrontPage-style themes, shared borders, beveled nav bars, hit counters, marquees, guestbooks, WordArt and 88x31 badges, as self-contained HTML that works offline and on phones.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/frontpage-90s-web-builder"
+      ]
+    }
+  ]
+}

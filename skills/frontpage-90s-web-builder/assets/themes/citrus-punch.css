@@ -1,0 +1,20 @@
+/* Theme: citrus-punch — homage to FrontPage's "Citrus Punch": juicy orange and lime on cream,
+   playful Trebuchet type. Good for cafés, juice bars, kids, summer camps, parties. */
+:root{
+  --fp-bg:#fffbe6;
+  --fp-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><rect width='48' height='48' fill='%23fffbe6'/><circle cx='8' cy='8' r='3' fill='%23ffd9a8'/><circle cx='32' cy='32' r='3' fill='%23e1f2a6'/></svg>");
+  --fp-text:#2b2b2b; --fp-link:#0050c8; --fp-vlink:#7a2e9e; --fp-alink:#ff4500;
+  --fp-body-font:"Trebuchet MS",Verdana,Arial,sans-serif; --fp-h-font:"Trebuchet MS",Verdana,sans-serif; --fp-h:#d9480f;
+  --fp-panel:#fff; --fp-side:#f4fbdc; --fp-panel-border:#ff9933;
+  --fp-banner-bg:#ff8c1a; --fp-banner-text:#fff; --fp-banner-shadow:#b34700;
+  --fp-banner-font:bold 32px/1.1 "Trebuchet MS",Verdana,sans-serif;
+  --fp-btn-bg:#a8d43c; --fp-btn-text:#1d3300; --fp-btn-light:#e4f7a8; --fp-btn-dark:#5a7d10;
+  --fp-btn-hover-bg:#c0e65c; --fp-btn-current-bg:#ff8c1a; --fp-btn-current-text:#fff;
+  --fp-hover-bg:#ff8c1a; --fp-hover-text:#fff; --fp-hover-glow:#ffd24d;
+  --fp-rule-h:6px; --fp-rule-bg:repeating-linear-gradient(90deg,#ff8c1a 0 18px,#a8d43c 18px 36px);
+  --fp-bullet:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='11'><circle cx='5.5' cy='5.5' r='5' fill='%23ff8c1a'/><path d='M5.5 5.5L5.5 .8M5.5 5.5L9.6 3.2M5.5 5.5L9.6 7.8M5.5 5.5L5.5 10.2M5.5 5.5L1.4 7.8M5.5 5.5L1.4 3.2' stroke='%23ffe0a8'/></svg>");
+  --fp-table-head:#ff8c1a; --fp-table-head-text:#fff; --fp-table-border:#ffb366; --fp-table-alt:#fff3e0;
+  --fp-form-bg:#f4fbdc;
+}
+.fp-banner{border-bottom:8px solid #a8d43c}
+table.fp-layout{border:3px solid #ff8c1a}
